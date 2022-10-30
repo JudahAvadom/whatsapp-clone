@@ -1,7 +1,7 @@
 import { useAssets } from 'expo-asset';
-import { StatusBar } from 'expo-status-bar';
+import { Ionicons } from "@expo/vector-icons";
 import { useEffect, useState, useContext } from 'react';
-import { LogBox, Text, View } from 'react-native';
+import { LogBox, Text } from 'react-native';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from "./firebase";
 import { NavigationContainer } from "@react-navigation/native";
@@ -23,8 +23,35 @@ const Stack = createStackNavigator();
 const Tab = createMaterialTopTabNavigator();
 
 function Home(){
+  const {
+    theme: { colors },
+  } = useContext(Context);
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={({route}) => {
+      return {
+        tabBarLabel: () => {
+          if (route.name === "photo") {
+            return <Ionicons name="camera" size={20} color={colors.white} />;
+          }
+          else {
+            return (
+              <Text style={{ color: colors.white }}>
+                {route.name.toLocaleUpperCase()}
+              </Text>
+          )};
+        },
+        tabBarShowIcon: true,
+        tabBarLabelStyle: {
+          color: colors.white,
+        },
+        tabBarIndicatorStyle: {
+          backgroundColor: colors.white,
+        },
+        tabBarStyle: {
+          backgroundColor: colors.foreground,
+        },
+      }
+    }}>
       <Tab.Screen name="photo" component={Photo} />
       <Tab.Screen name="chats" component={Chats} />
     </Tab.Navigator>
