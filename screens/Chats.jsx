@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import { Text, View } from 'react-native';
 
-// Context
+// Context & hooks
 import GlobalContext from "../context/Context";
+import useContacts from "../hooks/useHooks";
 
 // Firebase
 import { auth, db } from "../firebase";
@@ -15,6 +16,7 @@ import ListItem from '../components/ListItem';
 export default function Chats() {
   const { currentUser } = auth;
   const { rooms, setRooms, setUnfilteredRooms } = useContext(GlobalContext);
+  const contacts = useContacts();
   const chatsQuery = query(
     collection(db, "rooms"),
     where("participantsArray", "array-contains", currentUser.email)
@@ -43,8 +45,14 @@ export default function Chats() {
   }
   return (
     <View style={{ flex: 1, padding: 5, paddingRight: 10 }}>
-       {rooms.map((room) => (
+      {rooms.map((room) => (
         <ListItem
+          type="chat"
+          description={room.lastMessage.text}
+          key={room.id}
+          room={room}
+          time={room.lastMessage.createdAt}
+          user={getUserB(room.userB, contacts)}
         />
       ))}
       <ContactsFloatingIcon />
