@@ -1,7 +1,9 @@
 # Whatsapp Clone
 
-<img src="img/RN.png" width="80" />
-<img src="img/Fire.png" width="55" />
+<div style="display:flex">
+    <img src="img/RN.png" width="80" />
+    <img src="img/Fire.png" width="55" />
+</div>
 
 A Whatsapp clone app using React Native and Firebase, this application was made for educational purposes
 
