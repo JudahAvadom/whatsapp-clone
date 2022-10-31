@@ -16,6 +16,7 @@
     "expo": "~46.0.16",
     "expo-asset": "^8.6.1",
     "expo-constants": "^13.2.4",
+    "expo-contacts": "^10.3.0",
     "expo-image-picker": "^13.3.1",
     "expo-status-bar": "~1.4.0",
     "firebase": "^9.6.11",
@@ -24,6 +25,7 @@
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-native": "0.69.6",
+    "react-native-easy-grid": "^0.2.0",
     "react-native-get-random-values": "^1.8.0",
     "react-native-web": "~0.18.7"
   },

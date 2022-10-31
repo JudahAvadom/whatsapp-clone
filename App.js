@@ -1,18 +1,26 @@
-import { useAssets } from 'expo-asset';
-import { Ionicons } from "@expo/vector-icons";
+// React Native and Expo components
 import { useEffect, useState, useContext } from 'react';
 import { LogBox, Text } from 'react-native';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from "./firebase";
+import { useAssets } from 'expo-asset';
+import { Ionicons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+
+// Firebase
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from "./firebase";
+
+// Context
 import ContextWrapper from './context/ContextWrapper';
 import Context from "./context/Context";
+
+// Screens
 import Signin from './screens/Signin';
 import Profile from './screens/Profile';
 import Photo from './screens/Photo';
-import Chats from './screens/Chats'
+import Chats from './screens/Chats';
+import Contacts from './screens/Contacts'
 
 LogBox.ignoreLogs([
   "Setting a timer",
@@ -105,6 +113,11 @@ function App() {
             name='home' 
             options={{title:'Whatsapp'}} 
             component={Home} 
+          />
+          <Stack.Screen
+            name="contacts"
+            options={{ title: "Select Contacts" }}
+            component={Contacts}
           />
         </Stack.Navigator>
       )}

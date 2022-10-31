@@ -1,6 +1,10 @@
 import React, { Component, useContext, useState } from 'react';
 import { Text, View, Image, TextInput, Button, TouchableOpacity } from 'react-native';
+
+// Context
 import Context from '../context/Context';
+
+// Firebase
 import { signIn, signUp } from '../firebase'
 
 export default function Signin() {

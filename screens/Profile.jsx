@@ -1,14 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useContext, useState, useEffect } from 'react';
 import { Text, View, TouchableOpacity, Image, TextInput, Button } from 'react-native';
-import Context from '../context/Context';
-import Constans from "expo-constants";
+import { StatusBar } from 'expo-status-bar';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { pickImage, askForPermission, uploadImage } from "../utills";
+import Constans from "expo-constants";
+
+// Context
+import Context from '../context/Context';
+
+// Firebase
 import { auth, db } from "../firebase";
 import { updateProfile } from "@firebase/auth";
 import { doc, setDoc } from "@firebase/firestore";
 import { useNavigation } from "@react-navigation/native";
+
+// Utils
+import { pickImage, askForPermission, uploadImage } from "../utills";
 
 export default function Profile() {
   const [displayName, setDisplayName] = useState("");
