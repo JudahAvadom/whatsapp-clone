@@ -2,12 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth'
 import { getStorage } from "firebase/storage";
 import { initializeFirestore } from 'firebase/firestore'
+import { API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKER } from './auth.json'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAeI9yuBCWGJ_g2FI_yW2SF-CumE2dZEDc",
-  authDomain: "whatsapp-clone-c3f07.firebaseapp.com",
-  projectId: "whatsapp-clone-c3f07",
-  storageBucket: "whatsapp-clone-c3f07.appspot.com",
+  apiKey: API_KEY,
+  authDomain: AUTH_DOMAIN,
+  projectId: PROJECT_ID,
+  storageBucket: STORAGE_BUCKER,
   messagingSenderId: "1080066564448",
   appId: "1:1080066564448:web:fd66e443d047b11a39be05",
   measurementId: "G-HGBLD9JJK8"
