@@ -1,5 +1,6 @@
 {
     "API_KEY" :"",
     "AUTH_DOMAIN" : "",
-    "PROJECT_ID": ""
+    "PROJECT_ID": "",
+    "STORAGE_BUCKER"": ""
 }
